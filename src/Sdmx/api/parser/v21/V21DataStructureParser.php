@@ -188,6 +188,7 @@ class V21DataStructureParser implements DataStructureParser
         foreach ($attributes as $attribute) {
             $parsedAttribute = $this->parseAttribute($attribute, $concepts);
             $codelist = $parsedAttribute->getCodelist();
+            var_dump($codelist);
             $codelistIdentifier = $codelist->getFullIdentifier();
 
             if (array_key_exists($codelistIdentifier, $codelists)) {
