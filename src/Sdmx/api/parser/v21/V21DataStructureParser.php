@@ -189,14 +189,11 @@ class V21DataStructureParser implements DataStructureParser
             $parsedAttribute = $this->parseAttribute($attribute, $concepts);
             $codelist = $parsedAttribute->getCodelist();
             if(!is_null($codelist)) {
-
                 $codelistIdentifier = $codelist->getFullIdentifier();
-
                 if (array_key_exists($codelistIdentifier, $codelists)) {
                     $codelist->setCodes($codelists[$codelistIdentifier]);
                 }
             }
-
             $flowStructure->setAttribute($parsedAttribute);
         }
         $flowStructure->setTimeDimension($this->parseTimeDimension($structure));
